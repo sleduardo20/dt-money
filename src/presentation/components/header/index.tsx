@@ -1,7 +1,10 @@
+import { Container } from './styles';
+import Logo from '../../assets/logo.svg';
+
 export const Header = () => {
   return (
-    <div>
-      <h1>okok</h1>
-    </div>
+    <Container>
+      <img src={Logo} alt="" />
+    </Container>
   );
 };
