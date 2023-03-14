@@ -12,10 +12,6 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: 0 0 0 2px ${({ theme }) => theme['green-500']} ;
   }
 
-  html {
-    font-size: 62.5%;
-  }
-
   body {
     background-color: ${({ theme }) => theme['gray-800']} ;
     color: ${({ theme }) => theme['gray-100']} ;
@@ -29,6 +25,6 @@ export const GlobalStyle = createGlobalStyle`
   body, input, textarea, button {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size:  1.6rem;
+    font-size:  1rem;
     }
 `;
