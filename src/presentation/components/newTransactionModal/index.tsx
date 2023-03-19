@@ -11,7 +11,7 @@ import {
   TransactionTypeButton,
 } from './styles';
 
-import { coldDownFrom } from '../../utils/colddown';
+import { useTransactions } from '../../hooks/useTransactions';
 
 const newTransactionFormSchema = zod.object({
   description: zod.string(),
@@ -28,6 +28,7 @@ export const NewTransactionModal = () => {
     handleSubmit,
     formState: { isSubmitting },
     control,
+    reset,
   } = useForm<NewTransactionForm>({
     resolver: zodResolver(newTransactionFormSchema),
     defaultValues: {
@@ -35,10 +36,14 @@ export const NewTransactionModal = () => {
     },
   });
 
-  const handleNewTransaction = async (data: NewTransactionForm) => {
-    await coldDownFrom(500);
+  const { createTransactions } = useTransactions();
 
-    console.log(data);
+  const handleNewTransaction = async (data: NewTransactionForm) => {
+    const { description, price, category, type } = data;
+
+    await createTransactions(description, price, category, type);
+
+    reset();
   };
 
   return (

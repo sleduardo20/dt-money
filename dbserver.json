@@ -2,19 +2,43 @@
   "transactions": [
     {
       "id": 1,
-      "description": "Desenvolvimento de site",
-      "type": "income",
-      "category": "Venda",
-      "price": 14000,
-      "createdAt": "2022-07-29T19:36:44.505Z"
+      "description": "Livro - Harry Potter e o Prisioneiro de Azkaban",
+      "type": "outcome",
+      "category": "Entretenimento",
+      "price": 35,
+      "createdAt": "2023-03-17T10:15:23.123Z"
     },
     {
-      "id": 2,
-      "description": "Hambúrguer",
+      "description": "asdfa",
+      "price": 321,
+      "category": "asdf",
+      "type": "income",
+      "createdAt": "2023-03-19T03:45:48.586Z",
+      "id": 2
+    },
+    {
+      "description": "tests02",
+      "price": 2222,
+      "category": "aaaaa",
       "type": "outcome",
-      "category": "Alimentação",
-      "price": 50,
-      "createdAt": "2022-07-29T19:30:44.505Z"
+      "createdAt": "2023-03-19T03:55:40.510Z",
+      "id": 3
+    },
+    {
+      "description": "asdfas",
+      "price": 1231321,
+      "category": "asdfasdf",
+      "type": "outcome",
+      "createdAt": "2023-03-19T03:56:04.974Z",
+      "id": 4
+    },
+    {
+      "description": "asdfasdf",
+      "price": 4654,
+      "category": "asdfasdf",
+      "type": "outcome",
+      "createdAt": "2023-03-19T03:56:39.037Z",
+      "id": 5
     }
   ]
 }
