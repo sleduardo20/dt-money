@@ -7,7 +7,7 @@ export class TransactionsService {
     this.gateway = gateway;
   }
 
-  async getTransactions() {
-    return this.gateway.getTransactions();
+  async getTransactions(query?: string) {
+    return this.gateway.getTransactions(query);
   }
 }
