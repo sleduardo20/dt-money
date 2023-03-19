@@ -16,4 +16,21 @@ export class HttpTransactionsGateway implements TransactionsGateway {
 
     return transactions;
   }
+
+  async createTransactions(
+    description: string,
+    price: number,
+    category: string,
+    type: string,
+  ) {
+    const { data } = await api.post<Transaction>(this.TRANSACTIONS_URL, {
+      description,
+      price,
+      category,
+      type,
+      createdAt: new Date(),
+    });
+
+    return data;
+  }
 }

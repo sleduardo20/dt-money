@@ -10,4 +10,13 @@ export class TransactionsService {
   async getTransactions(query?: string) {
     return this.gateway.getTransactions(query);
   }
+
+  async createTransactions(
+    description: string,
+    price: number,
+    category: string,
+    type: string,
+  ) {
+    return this.gateway.createTransactions(description, price, category, type);
+  }
 }
