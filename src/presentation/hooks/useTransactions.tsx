@@ -5,7 +5,7 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { transactionService } from '../../application';
+import { transactionsService } from '../../application';
 import { Transaction } from '../../model/transation';
 
 interface TransactionContextType {
@@ -22,7 +22,7 @@ export const TransactionsProvider = ({ children }: ProviderProps) => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
   const fetchTransactions = async () => {
-    const response = await transactionService.getTransactions();
+    const response = await transactionsService.getTransactions();
     setTransactions(response);
   };
 
