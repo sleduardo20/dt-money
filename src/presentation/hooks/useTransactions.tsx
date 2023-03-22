@@ -1,6 +1,7 @@
 import {
   createContext,
   ReactNode,
+  useCallback,
   useContext,
   useEffect,
   useState,
@@ -28,26 +29,29 @@ interface ProviderProps {
 export const TransactionsProvider = ({ children }: ProviderProps) => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
-  const fetchTransactions = async (query?: string) => {
+  const fetchTransactions = useCallback(async (query?: string) => {
     const response = await transactionsService.getTransactions(query);
     setTransactions(response);
-  };
+  }, []);
 
-  const createTransactions = async (
-    description: string,
-    price: number,
-    category: string,
-    type: string,
-  ) => {
-    const newTransaction = await transactionsService.createTransactions(
-      description,
-      price,
-      category,
-      type,
-    );
+  const createTransactions = useCallback(
+    async (
+      description: string,
+      price: number,
+      category: string,
+      type: string,
+    ) => {
+      const newTransaction = await transactionsService.createTransactions(
+        description,
+        price,
+        category,
+        type,
+      );
 
-    setTransactions((state) => [...state, newTransaction]);
-  };
+      setTransactions((state) => [...state, newTransaction]);
+    },
+    [],
+  );
 
   useEffect(() => {
     fetchTransactions();
