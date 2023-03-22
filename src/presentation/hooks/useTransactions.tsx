@@ -55,7 +55,7 @@ export const TransactionsProvider = ({ children }: ProviderProps) => {
 
   useEffect(() => {
     fetchTransactions();
-  }, []);
+  }, [fetchTransactions]);
 
   return (
     <TransactionContext.Provider
